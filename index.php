@@ -3,15 +3,15 @@
 class User{
 	public $id;
 	public $username;
-	public $password;
 	public $email;
+	public $password;
 
 	// __construct() is a megic method and when initilize data to first executed without the call method of the class.
 	//  same as a __distruct magic method. is call in the last  
-	public function __construct(){
+	public function __construct($username,$password){
 		//$this is a point to the current variable.
 		$this->username = $username;
-		$this->username = $password;
+		$this->password = $password;
 	}
 
 	// public is a method access identifier.
@@ -28,13 +28,12 @@ class User{
 */
 
 	// login method has a nested method how to call the method into method expmple is here.
-	public function login($username, $password){
-		$this->auth_user($username, $password);
-
+	public function login(){
+		$this->auth_user();
 	}
 
-	public function auth_user($username, $password){
-		echo $username." is logged in "; 
+	public function auth_user(){
+		echo $this->username." is logged in "; 
 	}
 
 	//  same as a __distruct magic method. is call in the last  
@@ -44,7 +43,8 @@ class User{
 
 }
 
-$User = new User;
+$User = new User("kuldip","kul");
 
 // $User->register();
-$User->login("kuldip","kul");
+echo $User->username;
+$User->login();
