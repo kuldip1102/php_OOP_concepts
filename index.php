@@ -19,7 +19,7 @@ class User{
 		echo " User registered";
 	}
 
-	// login method has a two parameters $username and $password.
+	// login method has a two parameters $username and $password. 
 
 /*	public function login($username, $password){
 		echo $username." is Logged in "; 
